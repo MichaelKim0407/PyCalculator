@@ -98,7 +98,12 @@ class Calculator(object):
             return True
 
         # check the first element in line
-        name = line.split()[0].strip()
+        for i in range(len(line) - 1):
+            if not util.valid_var_name(line[:i + 1]):
+                name = line[:i]
+                break
+        else:
+            name = line
         if name in self.locals:
             self.last = self.locals[name]
             return True
