@@ -128,9 +128,6 @@ class Calculator(object):
         elif line == "clear":
             util.clear_screen()
             print ""
-        elif line == "help":
-            util.clear_screen()
-            print constant.HELP_STR
         elif line == "show":
             self.show()
         elif ">>" in line:

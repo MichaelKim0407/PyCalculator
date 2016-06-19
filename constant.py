@@ -12,9 +12,4 @@ for key in MATH_VARS.keys():
     if key.startswith("__"):
         MATH_VARS.pop(key)
 
-INTRO_STR = """Welcome to Michael Kim's Py-Calculator!
-Enter 'help' for usage guide.
-"""
-
-with open(os.path.join(FILE_DIR, "README.txt")) as f:
-    HELP_STR = f.read()
+INTRO_STR = "Welcome to Michael Kim's Py-Calculator!\n"

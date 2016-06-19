@@ -1,6 +1,14 @@
 Py-Calculator is a Python-based, easy-to-use calculator.
 Arthur: MichaelKim0407 <jinzheng19930407@sina.com>
 
+--- SETUP & RUN ---
+
+1. Please make sure you have Python 2.7 installed on your computer.
+
+2. Unpack the source code anywhere you like.
+
+3. Run main.py using Python 2.7.
+
 --- BASIC USAGES ---
 
 1. Enter any expression and get the result.
@@ -41,7 +49,6 @@ Arthur: MichaelKim0407 <jinzheng19930407@sina.com>
 2. To reset the calculator, enter 'reset'.
 3. To list all stored values and functions, enter 'show'.
 4. To clear the screen, enter 'clear'.
-5. To view the usage guide, enter 'help'.
 
 --- ADVANCED USAGES (for Python programmers) ---
 
