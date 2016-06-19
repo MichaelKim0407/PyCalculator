@@ -1,10 +1,14 @@
 import os
+import platform
 
 __author__ = 'Michael'
 
-
-def clear_screen():
-    os.system("cls")
+if platform.system() == "Windows":
+    def clear_screen():
+        os.system("cls")
+else:
+    def clear_screen():
+        os.system("clear")
 
 
 def print_vars(d):
