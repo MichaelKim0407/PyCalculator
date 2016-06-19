@@ -1,3 +1,4 @@
+import keyword
 import types
 
 __author__ = 'Michael'
@@ -17,7 +18,14 @@ def split_var_func(d):
     return var_dict, func_dict
 
 
+PyCalc_Keywords = ["exit", "reset", "clear", "show"]
+
+
 def valid_var_name(name):
+    if keyword.iskeyword(name):
+        return False
+    if name in PyCalc_Keywords:
+        return False
     if not (name[0].isalpha() or name[0] == "_"):
         return False
     for i in name[1:]:
