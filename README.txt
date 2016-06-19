@@ -25,6 +25,15 @@ Arthur: MichaelKim0407 <jinzheng19930407@sina.com>
 :2 ** __last__
 512
 
+Note: To use +/- as positive/negative signs instead of add/subtract, surround the number with parentheses.
+
+:10
+10
+:-5
+5
+:(-5)
+-5
+
 3. Store a value to a variable using '>>'.
 
 :1 + 2
