@@ -16,13 +16,13 @@ Arthur: MichaelKim0407 <jinzheng19930407@sina.com>
 :1 + 2
 3
 
-2. The result will be stored (__last__) for the next expression.
+2. The result will be stored (in '_') for the next expression.
 
 :1 + 2
 3
 :+ 6
 9
-:2 ** __last__
+:2 ** _
 512
 
 Note: To use +/- as positive/negative signs instead of add/subtract, surround the number with parentheses.
@@ -61,7 +61,7 @@ Note: To use +/- as positive/negative signs instead of add/subtract, surround th
 
 --- ADVANCED USAGES (for Python programmers) ---
 
-1. An assign statement in Python ('=', '+=', etc.) is the same as ">>" and will be stored into __last__.
+1. An assign statement in Python ('=', '+=', etc.) is the same as ">>" and will be stored into '_'.
 
 :x = 1
 1

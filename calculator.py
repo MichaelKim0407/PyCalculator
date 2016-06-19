@@ -25,7 +25,7 @@ class Calculator(object):
 
     def __setattr__(self, key, value):
         if key == "last":
-            self.locals["__last__"] = value
+            self.locals["_"] = value
         object.__setattr__(self, key, value)
 
     def show(self):
@@ -112,7 +112,7 @@ class Calculator(object):
         return True
 
     def calc(self, line):
-        if self.eval_expression("__last__ {}".format(line)):
+        if self.eval_expression("_ {}".format(line)):
             logger.info("Appended expression \'{}\', result {}".format(line, repr(self.last)))
         elif self.eval_expression(line):
             logger.info("Expression \'{}\', result {}".format(line, repr(self.last)))
