@@ -29,28 +29,28 @@ class Calculator(object):
         object.__setattr__(self, key, value)
 
     def show(self):
-        util.clear_screen()
+        util.terminal.clear_screen()
         const, builtin = util.split_var_func(self.constants)
         var, func = util.split_var_func(self.locals)
 
         print "Constants:"
-        util.print_vars(const)
+        util.terminal.print_vars(const)
         print ""
 
         print "Built-in functions:"
-        util.print_func_names(builtin)
+        util.terminal.print_func_names(builtin)
         print ""
 
         print "Variables:"
-        util.print_vars(var)
+        util.terminal.print_vars(var)
         print ""
 
         print "User-defined functions:"
-        util.print_func_names(func)
+        util.terminal.print_func_names(func)
         print ""
 
     def err(self):
-        print "Error: {}".format(self.e)
+        util.terminal.print_err("Error: {}".format(self.e))
 
     def eval_expression(self, line):
         try:
@@ -122,7 +122,7 @@ class Calculator(object):
             self.err()
             return False
         if self.last is not None:
-            print repr(self.last)
+            util.terminal.print_result(repr(self.last))
         return True
 
     def line(self, line):
@@ -131,7 +131,7 @@ class Calculator(object):
         elif line == "reset":
             raise ResetCommand
         elif line == "clear":
-            util.clear_screen()
+            util.terminal.clear_screen()
             print ""
         elif line == "show":
             self.show()
@@ -139,10 +139,10 @@ class Calculator(object):
             expr, var_name = line.rsplit(">>", 1)
             var_name = var_name.strip()
             if not self.calc(expr) or self.last is None:
-                print "Cannot assign value: not an expression"
+                util.terminal.print_err("Cannot assign value: not an expression")
             else:
                 if not util.valid_var_name(var_name):
-                    print "Cannot assign: \'{}\' is not a valid name".format(var_name)
+                    util.terminal.print_err("Cannot assign: \'{}\' is not a valid name".format(var_name))
                 else:
                     self.locals[var_name] = self.last
                     logger.info("Value assigned to \'{}\'".format(var_name))
@@ -152,6 +152,6 @@ class Calculator(object):
 
 def new_calculator():
     logger.info("--- Starting ---")
-    util.clear_screen()
+    util.terminal.clear_screen()
     print constant.INTRO_STR
     return Calculator(**constant.MATH_VARS)
