@@ -13,7 +13,7 @@ else:
 
 def print_vars(d):
     for key in sorted(d.keys()):
-        print "{: >16} = {: >16}".format(key, d[key])
+        print("{: >16} = {: >16}".format(key, d[key]))
 
 
 def print_func_names(d):
@@ -33,12 +33,12 @@ def print_func_names(d):
         s_right = spec.format(s)
         result += s_right
         x += d
-    print result
+    print(result)
 
 
 def print_result(text):
-    print "\033[36;1m{}\033[0m".format(text)
+    print("\033[36;1m{}\033[0m".format(text))
 
 
 def print_err(text):
-    print "\033[31;1m{}\033[0m".format(text)
+    print("\033[31;1m{}\033[0m".format(text))

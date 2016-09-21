@@ -33,21 +33,21 @@ class Calculator(object):
         const, builtin = util.split_var_func(self.constants)
         var, func = util.split_var_func(self.locals)
 
-        print "Constants:"
+        print("Constants:")
         util.terminal.print_vars(const)
-        print ""
+        print("")
 
-        print "Built-in functions:"
+        print("Built-in functions:")
         util.terminal.print_func_names(builtin)
-        print ""
+        print("")
 
-        print "Variables:"
+        print("Variables:")
         util.terminal.print_vars(var)
-        print ""
+        print("")
 
-        print "User-defined functions:"
+        print("User-defined functions:")
         util.terminal.print_func_names(func)
-        print ""
+        print("")
 
     def err(self):
         util.terminal.print_err("Error: {}".format(self.e))
@@ -132,7 +132,7 @@ class Calculator(object):
             raise ResetCommand
         elif line == "clear":
             util.terminal.clear_screen()
-            print ""
+            print("")
         elif line == "show":
             self.show()
         elif ">>" in line:
@@ -153,5 +153,5 @@ class Calculator(object):
 def new_calculator():
     logger.info("--- Starting ---")
     util.terminal.clear_screen()
-    print constant.INTRO_STR
+    print(constant.INTRO_STR)
     return Calculator(**constant.MATH_VARS)
