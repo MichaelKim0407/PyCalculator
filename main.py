@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import logging
 
 from mklibpy.terminal.interact import user_input
