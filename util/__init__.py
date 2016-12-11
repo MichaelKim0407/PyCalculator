@@ -34,4 +34,4 @@ def valid_var_name(name):
     return True
 
 
-import terminal
+from . import terminal

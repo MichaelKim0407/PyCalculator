@@ -1,5 +1,7 @@
 import logging
 
+import mklibpy
+
 import constant
 import util
 
@@ -29,7 +31,7 @@ class Calculator(object):
         object.__setattr__(self, key, value)
 
     def show(self):
-        util.terminal.clear_screen()
+        mklibpy.terminal.clear_screen()
         const, builtin = util.split_var_func(self.constants)
         var, func = util.split_var_func(self.locals)
 
@@ -67,7 +69,7 @@ class Calculator(object):
         old_values = dict(self.locals)
 
         try:
-            exec line in self.constants, self.locals
+            exec(line, self.constants, self.locals)
         except Exception as e:
             self.e = e
             return False
@@ -131,7 +133,7 @@ class Calculator(object):
         elif line == "reset":
             raise ResetCommand
         elif line == "clear":
-            util.terminal.clear_screen()
+            mklibpy.terminal.clear_screen()
             print("")
         elif line == "show":
             self.show()
@@ -142,7 +144,8 @@ class Calculator(object):
                 util.terminal.print_err("Cannot assign value: not an expression")
             else:
                 if not util.valid_var_name(var_name):
-                    util.terminal.print_err("Cannot assign: \'{}\' is not a valid name".format(var_name))
+                    util.terminal.print_err(
+                        "Cannot assign: \'{}\' is not a valid name".format(var_name))
                 else:
                     self.locals[var_name] = self.last
                     logger.info("Value assigned to \'{}\'".format(var_name))
@@ -152,6 +155,6 @@ class Calculator(object):
 
 def new_calculator():
     logger.info("--- Starting ---")
-    util.terminal.clear_screen()
+    mklibpy.terminal.clear_screen()
     print(constant.INTRO_STR)
     return Calculator(**constant.MATH_VARS)

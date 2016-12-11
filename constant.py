@@ -8,7 +8,7 @@ LOG_FILE = os.path.join(FILE_DIR, "pycalc.log")
 LOG_FORMAT = "[%(asctime)s %(levelname)s %(name)s] %(message)s"
 
 MATH_VARS = dict(math.__dict__)
-for key in MATH_VARS.keys():
+for key in list(MATH_VARS.keys()):
     if key.startswith("__"):
         MATH_VARS.pop(key)
 

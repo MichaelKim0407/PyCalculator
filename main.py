@@ -1,5 +1,7 @@
 import logging
 
+from mklibpy.terminal.interact import user_input
+
 import calculator
 import constant
 
@@ -13,7 +15,7 @@ if __name__ == '__main__':
     )
     calc = calculator.new_calculator()
     while True:
-        line = raw_input(":")
+        line = user_input(":")
         try:
             calc.line(line)
         except calculator.ExitCommand:
