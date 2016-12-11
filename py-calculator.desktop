@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PyCalculator
+GenericName=PyCalculator by MichaelKim0407
+Exec=pycalc
+Icon=accessories-calculator
+Terminal=true
+Type=Application
+StartupNotify=true
