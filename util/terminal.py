@@ -27,7 +27,8 @@ def print_func_names(d):
     print(format_list_rows(
         sorted(d.keys()),
         width=16,
-        columns=6
+        columns=4,
+        r=False
     ))
 
 
