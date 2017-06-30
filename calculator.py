@@ -91,7 +91,7 @@ class Calculator(object):
             self.locals[key]
             for key in self.locals
             if self.locals[key] != old_values[key]
-            ]
+        ]
         if len(changed_values) == 1:
             self.last = changed_values[0]
             return True
