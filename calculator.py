@@ -153,8 +153,9 @@ class Calculator(object):
             self.calc(line)
 
 
-def new_calculator():
+def new_calculator(interactive=True):
     logger.info("--- Starting ---")
-    mklibpy.terminal.clear_screen()
-    print(constant.INTRO_STR)
+    if interactive:
+        mklibpy.terminal.clear_screen()
+        print(constant.INTRO_STR)
     return Calculator(**constant.MATH_VARS)
