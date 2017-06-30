@@ -91,7 +91,7 @@ class Calculator(object):
             self.locals[key]
             for key in self.locals
             if self.locals[key] != old_values[key]
-            ]
+        ]
         if len(changed_values) == 1:
             self.last = changed_values[0]
             return True
@@ -153,8 +153,9 @@ class Calculator(object):
             self.calc(line)
 
 
-def new_calculator():
+def new_calculator(interactive=True):
     logger.info("--- Starting ---")
-    mklibpy.terminal.clear_screen()
-    print(constant.INTRO_STR)
+    if interactive:
+        mklibpy.terminal.clear_screen()
+        print(constant.INTRO_STR)
     return Calculator(**constant.MATH_VARS)
