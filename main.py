@@ -3,6 +3,7 @@
 import logging
 
 from mklibpy.terminal.interact import user_input
+from mklibpy.util.collection import format_list
 
 import calculator
 import constant
@@ -31,7 +32,7 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("expression", nargs=argparse.OPTIONAL)
+    parser.add_argument("expression", nargs=argparse.REMAINDER)
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -41,6 +42,6 @@ if __name__ == '__main__':
     )
 
     if args.expression:
-        expression(args.expression)
+        expression(format_list(args.expression, "", "", " ", False))
     else:
         start_interactive()
