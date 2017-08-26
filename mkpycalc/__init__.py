@@ -23,7 +23,7 @@ def start_interactive():
             calc = calculator.new_calculator()
 
 
-if __name__ == '__main__':
+def run_from_command_line():
     import argparse
 
     parser = argparse.ArgumentParser()
