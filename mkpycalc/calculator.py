@@ -2,8 +2,8 @@ import logging
 
 import mklibpy
 
-import constant
-import util
+from . import constant
+from . import util
 
 __author__ = 'Michael'
 
