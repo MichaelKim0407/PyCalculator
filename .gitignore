@@ -1,3 +1,9 @@
+# IDE
+.idea/
+
+# Python
 *.py[cod]
-.idea
-*.log
+__pycache__/
+
+# Mac
+.DS_Store
