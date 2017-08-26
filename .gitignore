@@ -1,3 +1,13 @@
+# IDE
+.idea/
+
+# Python
 *.py[cod]
-.idea
-*.log
+__pycache__/
+
+# Pip
+dist/
+*.egg-info/
+
+# Mac
+.DS_Store

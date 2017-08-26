@@ -1,110 +1,89 @@
-# PyCalculator
+# PyCalculator v2
 
-Author: MichaelKim0407 <jinzheng19930407@sina.com>
+Author: [Michael Kim](http://michaelkim0407.com) <mkim0407@gmail.com>
 
 ## Installation
 
 1. Make sure you have Python2.7 or Python3.4+
 
-2. Install `mklibpy`
+2. Install using pip
 
-    Please refer to https://github.com/MichaelKim0407/mklibpy for installation.
-
-3. Download or clone this package
+    ```
+    pip install mkpycalc
+    ```
 
 ## Run
 
-Run main.py using a desired version of Python.
+A script named `pycalc` should be automatically installed by pip.
 
-There is no need to start the program under the same folder.
+1. Run in interactive mode
 
-## Make it easier to run
+    ```
+    pycalc
+    ```
 
-1. On Windows
+2. Evaluate single expression
 
-    * Create a desktop entry
+    ```
+    pycalc EXPRESSION
+    ```
 
-        On your desktop, create pycalc.bat;
+    There is no need to quote the expression.
 
-        Edit with Notepad or any text file editor, and enter the following command:
-
-            python3 path\to\PyCalculator\main.py
-
-        Replace `python3` with the desired version of Python.
-
-        Now you should be able to start the calculator by double-clicking the .bat file.
-
-2. On Linux / Mac
-
-    * Make it accessible in terminal by every user
-
-        Login as `root`;
-
-        Download or clone the package under `/usr/lib` (or anywhere that is owned by `root`);
-
-        Create a file called `pycalc.log`, and give rw privilege to all users by `chmod a+rw pycalc.log`;
-
-        Under `/usr/bin` (or anywhere that is included in the system PATH), create a symlink to `main.py`:
-
-            ln -s /usr/lib/PyCalculator/main.py pycalc
-
-        Now, you should be able to run `pycalc` anywhere with any user.
-
-        If you don't want to use Python3, or your Python3 is not installed at `/usr/bin/python3`, create a bash script called `pycalc` and enter:
-
-            #!/bin/bash
-            python3 /usr/lib/PyCalculator/main.py
-
-        And make the script executable by `chmod +x pycalc`.
-
-    * (Ubuntu) Create a desktop entry
-
-        Copy `py-calculator.desktop` to `~/Desktop/`.
-
-        Now you should be able to start the calculator by double-clicking the desktop entry.
+    **However**, if the expression contains `*`, your shell may replace it with file names under current working directory, in which case you do need to quote the expression.
 
 ## Basic usages
 
 1. Enter any expression and get the result.
 
-        :1 + 2
-        3
+    ```
+    :1 + 2
+    3
+    ```
 
 2. The result will be stored (in `_`) for the next expression.
 
-        :1 + 2
-        3
-        :+ 6
-        9
-        :2 ** _
-        512
+    ```
+    :1 + 2
+    3
+    :+ 6
+    9
+    :2 ** _
+    512
+    ```
 
     Note: To use `+`/`-` as positive/negative signs instead of add/subtract, surround the number with parentheses.
 
-        :10
-        10
-        :-5
-        5
-        :(-5)
-        -5
+    ```
+    :10
+    10
+    :-5
+    5
+    :(-5)
+    -5
+    ```
 
 3. Store a value to a variable using `>>`.
 
-        :1 + 2
-        3
-        :>> x
-        3
-        :x
-        3
-        :+ 5 >> y
-        8
-        :y
-        8
+    ```
+    :1 + 2
+    3
+    :>> x
+    3
+    :x
+    3
+    :+ 5 >> y
+    8
+    :y
+    8
+    ```
 
 4. Use values and functions from the `math` package of Python.
 
-        :sin(pi / 6)
-        0.5
+    ```
+    :sin(pi / 6)
+    0.5
+    ```
 
 ## Basic controls
 
@@ -120,27 +99,39 @@ There is no need to start the program under the same folder.
 
 1. An assign statement in Python (`=`, `+=`, etc.) is the same as `>>` and will be stored into `_`.
 
-        :x = 1
-        1
-        :x += 3
-        4
+    ```
+    :x = 1
+    1
+    :x += 3
+    4
+    ```
 
 2. Any one-line Python code can be executed.
 
-        :1 >> x
-        1
-        :print "---{}---".format(x)
-        ---1---
+    ```
+    :1 >> x
+    1
+    :print "---{}---".format(x)
+    ---1---
+    ```
 
 3. Define custom functions using one-line code or a lambda expression.
 
-        :def cube(x): return x ** 3
-        <function cube at ......>
-        :cube(4)
-        64
-        :sq = lambda x: x ** 2
-        <function <lambda> at ......>
-        :sq(5)
-        25
+    ```
+    :def cube(x): return x ** 3
+    <function cube at ......>
+    :cube(4)
+    64
+    :sq = lambda x: x ** 2
+    <function <lambda> at ......>
+    :sq(5)
+    25
+    ```
 
-4. Execution log can be found in `pycalc.log` under the program folder.
+## Import as a library
+
+Simply `import mkpycalc` in your Python program and do whatever you want!
+
+## License
+
+MIT

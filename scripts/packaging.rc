@@ -1,0 +1,2 @@
+version=$(cat ../VERSION)
+dist="dist/mkpycalc-$version.tar.gz"
