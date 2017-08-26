@@ -1,11 +1,6 @@
 import math
-import os
 
 __author__ = 'Michael'
-
-FILE_DIR = os.path.dirname(os.path.abspath(__file__))
-LOG_FILE = os.path.join(FILE_DIR, "pycalc.log")
-LOG_FORMAT = "[%(asctime)s %(levelname)s %(name)s] %(message)s"
 
 MATH_VARS = dict(math.__dict__)
 for key in list(MATH_VARS.keys()):

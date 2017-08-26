@@ -1,10 +1,7 @@
-import logging
-
 from mklibpy.terminal.interact import user_input
 from mklibpy.util.collection import format_list
 
 from . import calculator
-from . import constant
 
 __author__ = 'Michael'
 
@@ -32,12 +29,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("expression", nargs=argparse.REMAINDER)
     args = parser.parse_args()
-
-    logging.basicConfig(
-        format=constant.LOG_FORMAT,
-        filename=constant.LOG_FILE,
-        level=logging.INFO
-    )
 
     if args.expression:
         expression(format_list(args.expression, "", "", " ", False))
